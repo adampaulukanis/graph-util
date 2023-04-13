@@ -1,5 +1,7 @@
-(defpackage graph-util
-  (:use :cl))
-(in-package :graph-util)
+(defpackage #:graph-util
+  (:use #:cl)
+  (:export #:dot-name))
+(in-package #:graph-util)
 
-;; blah blah blah.
+(defun dot-name (exp)
+  (substitute-if #\_ (complement #'alphanumericp) (prin1-to-string exp)))
