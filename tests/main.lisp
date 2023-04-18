@@ -23,3 +23,7 @@
     (ok (string= (graph-util::dot-label '(adam)) "(ADAM)")))
   (testing "if the string is longer than the limit, it gets cropped, and an ellipsis is added to indicate that fact"
     (ok (string= (graph-util::dot-label '(hello how are you? I am fine and good)) "(HELLO HOW ARE YOU? I AM FI..."))))
+
+(deftest nodes->dot
+  (testing "generate the DOT information for the nodes in the wizard's house"
+    (graph-util::nodes->dot *wizard-nodes*)))
